@@ -412,3 +412,12 @@ exports.un = function (event, callback) {
         }
     }
 };
+
+/**
+ * Fire queued events once the device is ready and all listeners are registered.
+ *
+ * @return [ Void ]
+ */
+exports.fireQueuedEvents = function() {
+    this.exec('ready');
+};

@@ -435,7 +435,9 @@ exports.setLaunchDetails = function () {
 // Called after 'deviceready' event
 channel.deviceready.subscribe(function () {
     if (['Android', 'windows', 'iOS'].indexOf(device.platform) > -1) {
-        exports.exec('ready');
+        if (!window.skipLocalNotificationReady) {
+            exports.exec('ready');
+        }
     }
 });
 

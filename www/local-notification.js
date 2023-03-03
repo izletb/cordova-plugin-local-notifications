@@ -313,3 +313,12 @@ exports.on = function (event, callback, scope) {
 exports.un = function (event, callback) {
     this.core.un(event, callback);
 };
+
+/**
+ * Fire queued events once the device is ready and all listeners are registered.
+ *
+ * @return [ Void ]
+ */
+exports.fireQueuedEvents = function() {
+  this.core.fireQueuedEvents();
+};
